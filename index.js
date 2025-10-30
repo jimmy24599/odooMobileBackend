@@ -1,0 +1,136 @@
+import express from 'express';
+import xmlrpc from 'xmlrpc';
+import cors from 'cors';
+import authRoutes from './routes/auth.routes.js';
+import productsRoutes from './routes/products.routes.js';
+import modelsRoutes from './routes/models.routes.js';
+// Per-model routes
+import singleProductsRoutes from './routes/products.single.routes.js';
+import warehousesRoutes from './routes/warehouses.routes.js';
+import quantsRoutes from './routes/quants.routes.js';
+import pickingsRoutes from './routes/pickings.routes.js';
+import stockMovesRoutes from './routes/stockMoves.routes.js';
+import moveLinesRoutes from './routes/moveLines.routes.js';
+import uomRoutes from './routes/uom.routes.js';
+import categoriesRoutes from './routes/categories.routes.js';
+import pickingTypesRoutes from './routes/pickingTypes.routes.js';
+import lotsRoutes from './routes/lots.routes.js';
+import inventoryRoutes from './routes/inventory.routes.js';
+import inventoryLinesRoutes from './routes/inventoryLines.routes.js';
+import landedCostsRoutes from './routes/landedCosts.routes.js';
+import stockRulesRoutes from './routes/stockRules.routes.js';
+import stockRoutesRoutes from './routes/stockRoutes.routes.js';
+import locationsRoutes from './routes/locations.routes.js';
+import productionsRoutes from './routes/productions.routes.js';
+import partnerTitlesRoutes from './routes/partnerTitles.routes.js';
+import pickingTransfersRoutes from './routes/pickingTransfers.routes.js';
+import partnersRoutes from './routes/partners.routes.js';
+import productPackagingRoutes from './routes/productPackaging.routes.js';
+import productTemplatesRoutes from './routes/productTemplates.routes.js';
+import accountTaxesRoutes from './routes/accountTaxes.routes.js';
+import productTagsRoutes from './routes/productTags.routes.js';
+import websitesRoutes from './routes/websites.routes.js';
+import posCategoriesRoutes from './routes/posCategories.routes.js';
+import currenciesRoutes from './routes/currencies.routes.js';
+import countriesRoutes from './routes/countries.routes.js';
+import accountJournalsRoutes from './routes/accountJournals.routes.js';
+import accountMovesRoutes from './routes/accountMoves.routes.js';
+import accountsRoutes from './routes/accounts.routes.js';
+import putawayRulesRoutes from './routes/putawayRules.routes.js';
+import storageCategoriesRoutes from './routes/storageCategories.routes.js';
+import workcentersRoutes from './routes/workcenters.routes.js';
+import projectsRoutes from './routes/projects.routes.js';
+import packageTypesRoutes from './routes/packageTypes.routes.js';
+import quantPackagesRoutes from './routes/quantPackages.routes.js';
+import purchaseOrderLinesRoutes from './routes/purchaseOrderLines.routes.js';
+import removalStrategiesRoutes from './routes/removalStrategies.routes.js';
+import attributesRoutes from './routes/attributes.routes.js';
+import attributeValuesRoutes from './routes/attributeValues.routes.js';
+import attributeLinesRoutes from './routes/attributeLines.routes.js';
+import supplierinfoRoutes from './routes/supplierinfo.routes.js';
+import settingsRoutes from './routes/settings.routes.js';
+import scrapRoutes from './routes/scrap.routes.js';
+import fieldsRoutes from './routes/fields.routes.js';
+import landedCostLinesRoutes from './routes/landedCostLines.routes.js';
+import deliveryCarriersRoutes from './routes/deliveryCarriers.routes.js';
+import deliveryPriceRulesRoutes from './routes/deliveryPriceRules.routes.js';
+import statesRoutes from './routes/states.routes.js';
+import zipPrefixesRoutes from './routes/zipPrefixes.routes.js';
+import repairsRoutes from './routes/repairs.routes.js';
+import usersRoutes from './routes/users.routes.js';
+import repairTagsRoutes from './routes/repairTags.routes.js';
+
+const app = express();
+const port = 3000;
+
+  //['http://localhost:5173', 'http://localhost:8081']
+app.use(cors({
+  origin: '*',
+}));
+
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ limit: '10mb', extended: true }));
+app.use('/api/auth', authRoutes);
+app.use('/api/products', productsRoutes);
+app.use('/api/models', modelsRoutes);
+// Per-model mounts
+app.use('/api/products-single', singleProductsRoutes);
+app.use('/api/warehouses', warehousesRoutes);
+app.use('/api/quants', quantsRoutes);
+app.use('/api/pickings', pickingsRoutes);
+app.use('/api/stock-moves', stockMovesRoutes);
+app.use('/api/move-lines', moveLinesRoutes);
+app.use('/api/uom', uomRoutes);
+app.use('/api/categories', categoriesRoutes);
+app.use('/api/picking-types', pickingTypesRoutes);
+app.use('/api/lots', lotsRoutes);
+app.use('/api/inventory', inventoryRoutes);
+app.use('/api/inventory-lines', inventoryLinesRoutes);
+app.use('/api/landed-costs', landedCostsRoutes);
+app.use('/api/stock-rules', stockRulesRoutes);
+app.use('/api/stock-routes', stockRoutesRoutes);
+app.use('/api/locations', locationsRoutes);
+app.use('/api/productions', productionsRoutes);
+app.use('/api/partner-titles', partnerTitlesRoutes);
+app.use('/api/picking-transfers', pickingTransfersRoutes);
+app.use('/api/partners', partnersRoutes);
+app.use('/api/product-packaging', productPackagingRoutes);
+app.use('/api/product-templates', productTemplatesRoutes);
+app.use('/api/account-taxes', accountTaxesRoutes);
+app.use('/api/product-tags', productTagsRoutes);
+app.use('/api/websites', websitesRoutes);
+app.use('/api/pos-categories', posCategoriesRoutes);
+app.use('/api/currencies', currenciesRoutes);
+app.use('/api/countries', countriesRoutes);
+app.use('/api/account-journals', accountJournalsRoutes);
+app.use('/api/account-moves', accountMovesRoutes);
+app.use('/api/accounts', accountsRoutes);
+app.use('/api/putaway-rules', putawayRulesRoutes);
+app.use('/api/storage-categories', storageCategoriesRoutes);
+app.use('/api/package-types', packageTypesRoutes);
+app.use('/api/quant-packages', quantPackagesRoutes);
+app.use('/api/removal-strategies', removalStrategiesRoutes);
+app.use('/api/attributes', attributesRoutes);
+app.use('/api/attribute-values', attributeValuesRoutes);
+app.use('/api/attribute-lines', attributeLinesRoutes);
+app.use('/api/supplierinfo', supplierinfoRoutes);
+app.use('/api/settings', settingsRoutes);
+app.use('/api/scraps', scrapRoutes);
+app.use('/api/fields', fieldsRoutes);
+app.use('/api/landed-cost-lines', landedCostLinesRoutes);
+app.use('/api/workcenters', workcentersRoutes);
+app.use('/api/projects', projectsRoutes);
+app.use('/api/purchase-order-lines', purchaseOrderLinesRoutes);
+app.use('/api/delivery-carriers', deliveryCarriersRoutes);
+app.use('/api/delivery-price-rules', deliveryPriceRulesRoutes);
+app.use('/api/states', statesRoutes);
+app.use('/api/zip-prefixes', zipPrefixesRoutes);
+app.use('/api/repairs', repairsRoutes);
+app.use('/api/users', usersRoutes);
+app.use('/api/repair-tags', repairTagsRoutes);
+
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
+
+

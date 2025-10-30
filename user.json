@@ -1,0 +1,123 @@
+Login successful: {
+    uid: 19,
+    is_system: false,
+    is_admin: false,
+    is_public: false,
+    is_internal_user: true,
+    user_context: { lang: 'en_US', tz: 'Europe/Samara', uid: 19 },
+    db: 'odoodb1',
+    user_settings: {
+      id: 7,
+      user_id: { id: 19 },
+      is_discuss_sidebar_category_channel_open: true,
+      is_discuss_sidebar_category_chat_open: true,
+      push_to_talk_key: false,
+      use_push_to_talk: false,
+      voice_active_duration: 200,
+      channel_notifications: false,
+      mute_until_dt: false,
+      volumes: [ [Array] ]
+    },
+    server_version: '18.0-20250918',
+    server_version_info: [ 18, 0, 0, 'final', 0, '' ],
+    support_url: 'https://www.odoo.com/buy',
+    name: 'WMS30',
+    username: 'Xyz@gmail.com',
+    quick_login: true,
+    partner_write_date: '2025-10-07 10:49:14',
+    partner_display_name: 'WMS30',
+    partner_id: 406,
+    'web.base.url': 'http://egy.thetalenter.net',
+    active_ids_limit: 20000,
+    profile_session: null,
+    profile_collectors: null,
+    profile_params: null,
+    max_file_upload_size: 134217728,
+    home_action_id: false,
+    cache_hashes: {
+      translations: '8d411f06c90b4a9ca9548399292fe7f9d3e52c2a',
+      load_menus: 'b1f9434041b88d94d4c9a31d8cecaeec988724ec394741c284ff0b53d1265e83'
+    },
+    currencies: {
+      '1': { symbol: '$', position: 'before', digits: [Array] },
+      '74': { symbol: 'LE', position: 'after', digits: [Array] },
+      '128': { symbol: 'AED', position: 'after', digits: [Array] }
+    },
+    bundle_params: { lang: 'en_US' },
+    test_mode: false,
+    view_info: {
+      list: {
+        display_name: 'List',
+        icon: 'oi oi-view-list',
+        multi_record: true
+      },
+      form: {
+        display_name: 'Form',
+        icon: 'fa fa-address-card',
+        multi_record: false
+      },
+      graph: {
+        display_name: 'Graph',
+        icon: 'fa fa-area-chart',
+        multi_record: true
+      },
+      pivot: {
+        display_name: 'Pivot',
+        icon: 'oi oi-view-pivot',
+        multi_record: true
+      },
+      calendar: {
+        display_name: 'Calendar',
+        icon: 'fa fa-calendar',
+        multi_record: true
+      },
+      kanban: {
+        display_name: 'Kanban',
+        icon: 'oi oi-view-kanban',
+        multi_record: true
+      },
+      search: {
+        display_name: 'Search',
+        icon: 'oi oi-search',
+        multi_record: true
+      },
+      hierarchy: {
+        display_name: 'Hierarchy',
+        icon: 'fa fa-share-alt fa-rotate-90',
+        multi_record: true
+      },
+      activity: {
+        display_name: 'Activity',
+        icon: 'fa fa-clock-o',
+        multi_record: true
+      }
+    },
+    user_companies: {
+      current_company: 1,
+      allowed_companies: { '1': [Object] },
+      disallowed_ancestor_companies: {}
+    },
+    show_effect: true,
+    display_switch_company_menu: false,
+    max_time_between_keys_in_ms: 150,
+    websocket_worker_version: '18.0-5',
+    tour_enabled: false,
+    current_tour: null,
+    storeData: {
+      Store: {
+        action_discuss_id: 120,
+        channel_types_with_seen_infos: [Array],
+        hasGifPickerFeature: false,
+        hasLinkPreviewFeature: true,
+        hasMessageTranslationFeature: false,
+        internalUserGroupId: 1,
+        mt_comment_id: 1,
+        odoobot: [Object],
+        self: [Object],
+        settings: [Object]
+      },
+      'res.partner': [ [Object], [Object] ]
+    },
+    can_insert_in_spreadsheet: false
+  }
+  
